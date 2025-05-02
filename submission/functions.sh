@@ -116,3 +116,9 @@ trim() {
   var="${var%"${var##*[![:space:]]}"}"
   printf '%s' "$var"
 }
+
+get_block_count(){
+ echo "Getting block count"
+ bitcoin-cli -regtest getblockcount
+ return 0
+}
