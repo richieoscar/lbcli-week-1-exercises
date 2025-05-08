@@ -184,7 +184,7 @@ check_cmd "Getting address info"
 
 # STUDENT TASK: Extract the internal key (the x-only pubkey) from the descriptor
 # WRITE YOUR SOLUTION BELOW:
-P2SH_VALID=$(bitcoin-cli -regtest validateaddress "$P2SH_ADDR" | jq -r '.isvalid')
+
 INTERNAL_KEY=$(bitcoin-cli -regtest -rpcwallet=treasurewallet getaddressinfo "$NEW_TAPROOT_ADDR" | jq -r '.scriptPubKey')
 check_cmd "Extracting key from descriptor"
 INTERNAL_KEY=$(trim "$INTERNAL_KEY")
@@ -199,7 +199,7 @@ echo "Simple descriptor: $SIMPLE_DESCRIPTOR"
 
 # STUDENT TASK: Get a proper descriptor with checksum
 # WRITE YOUR SOLUTION BELOW:
-TAPROOT_DESCRIPTOR=$(bitcoin-cli getdescriptorinfo "$SIMPLE_DESCRIPTOR")
+TAPROOT_DESCRIPTOR=$(bitcoin-cli -regtest -rpcwallet=treasurewallet getaddressinfo "$NEW_TAPROOT_ADDR" | jq -r '.desc')
 check_cmd "Descriptor generation"
 TAPROOT_DESCRIPTOR=$(trim "$TAPROOT_DESCRIPTOR")
 echo "Taproot treasure map: $TAPROOT_DESCRIPTOR"
