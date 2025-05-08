@@ -136,6 +136,9 @@ echo "Verify the signature to reveal the hidden message!"
 
 # This part is done for you - creating a signed message
 SECRET_MESSAGE="You've successfully completed the Bitcoin treasure hunt!"
+echo "legacy Address: $LEGACY_ADDR"
+echo "Secrete Message: $SECRET_MESSAGE"
+
 SIGNATURE=$(bitcoin-cli -regtest -rpcwallet=treasurewallet signmessage "$LEGACY_ADDR" "$SECRET_MESSAGE")
 check_cmd "Message signing"
 echo "Address: $LEGACY_ADDR"
