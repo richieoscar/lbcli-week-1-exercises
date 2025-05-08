@@ -203,7 +203,7 @@ TAPROOT_DESCRIPTOR=$(bitcoin-cli getdescriptorinfo "$SIMPLE_DESCRIPTOR")
 check_cmd "Descriptor generation"
 TAPROOT_DESCRIPTOR=$(trim "$TAPROOT_DESCRIPTOR")
 echo "Taproot treasure map: $TAPROOT_DESCRIPTOR"
-
+#
 # STUDENT TASK: Derive an address from the descriptor
 # WRITE YOUR SOLUTION BELOW:
 DERIVED_ADDR_RAW=
