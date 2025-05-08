@@ -184,9 +184,12 @@ check_cmd "Getting address info"
 
 # STUDENT TASK: Extract the internal key (the x-only pubkey) from the descriptor
 # WRITE YOUR SOLUTION BELOW:
-INTERNAL_KEY=
+P2SH_VALID=$(bitcoin-cli -regtest validateaddress "$P2SH_ADDR" | jq -r '.isvalid')
+INTERNAL_KEY=$(bitcoin-cli -regtest -rpcwallet=treasurewallet getaddressinfo "$NEW_TAPROOT_ADDR" | jq -r '.scriptPubKey')
 check_cmd "Extracting key from descriptor"
 INTERNAL_KEY=$(trim "$INTERNAL_KEY")
+
+echo "Internal Key $INTERNAL_KEY"
 
 # STUDENT TASK: Create a proper descriptor with just the key
 # WRITE YOUR SOLUTION BELOW:
