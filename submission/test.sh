@@ -117,7 +117,7 @@ P2SH_VALID=$(bitcoin-cli -regtest validateaddress $P2SH_ADDR)
 check_cmd "Address validation"
 echo "P2SH vault validation: $P2SH_VALID"
 
-P2SH_VALID=$(bitcoin-cli -regtest validateaddress "$P2SH_ADDR" | jq -r '.isValid')
+P2SH_VALID=$(bitcoin-cli -regtest validateaddress "$P2SH_ADDR" | jq -r '.isvalid')
 echo "P2SH vault validation: $P2SH_VALID"
 
 if [[ "$P2SH_VALID" == "true" ]]; then
