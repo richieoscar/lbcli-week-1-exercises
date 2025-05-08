@@ -30,6 +30,8 @@ echo "Now, create another wallet called 'treasurewallet' to fund your adventure"
 # STUDENT TASK: Create another wallet called "treasurewallet"
 # WRITE YOUR SOLUTION BELOW:
 bitcoin-cli -regtest createwallet wallet_name="treasurewallet"
+bitcoin-cli -regtest loadwallet "treasurewallet"
+bitcoin-cli -regtest loadwallet "btrustewallet"
 
 
 
