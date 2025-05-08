@@ -31,7 +31,6 @@ echo "Now, create another wallet called 'treasurewallet' to fund your adventure"
 # WRITE YOUR SOLUTION BELOW:
 bitcoin-cli -regtest createwallet wallet_name="treasurewallet"
 bitcoin-cli -regtest loadwallet "treasurewallet"
-bitcoin-cli -regtest loadwallet "btrustwallet"
 
 
 
