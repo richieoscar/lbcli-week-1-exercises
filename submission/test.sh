@@ -14,7 +14,7 @@ set -e
 # ========================================================================
 
 # Set up the challenge scenario
-setup_challenge
+#setup_challenge
 
 # CHALLENGE PART 1: Create a wallet to track your discoveries
 echo "CHALLENGE 1: Create your explorer wallet"
@@ -22,17 +22,14 @@ echo "----------------------------------------"
 echo "Create a wallet named 'btrustwallet' to track your Bitcoin exploration"
 # STUDENT TASK: Use bitcoin-cli to create a wallet named "btrustwallet"
 # WRITE YOUR SOLUTION BELOW:
-bitcoin-cli -regtest createwallet wallet_name="btrustwallet"
+bitcoin-cli -regtest createwallet "btrustwallet"
 
 
 # Create a second wallet that will hold the treasure
 echo "Now, create another wallet called 'treasurewallet' to fund your adventure"
 # STUDENT TASK: Create another wallet called "treasurewallet"
 # WRITE YOUR SOLUTION BELOW:
-bitcoin-cli -regtest createwallet wallet_name="treasurewallet"
-bitcoin-cli -regtest loadwallet "treasurewallet"
-
-
+bitcoin-cli -regtest createwallet "treasurewallet"
 
 # Generate an address for mining in the treasure wallet
 # STUDENT TASK: Generate a new address in the treasurewallet
